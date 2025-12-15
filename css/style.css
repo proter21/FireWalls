@@ -1,410 +1,164 @@
-:root {
-  --bg: #0f172a;
-  --text: #e2e8f0;
-  --primary: #3b82f6;
-  --muted: #94a3b8;
-  --error: #f87171;
-  --success: #4ade80;
-}
-
+/* ===== ОСНОВНИ НАСТРОЙКИ ===== */
 * {
   box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.5;
 }
 
+/* ===== HEADER ===== */
 header {
-  background: #1e293b;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
 }
 
 .topbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
+  align-items: center;
+  padding: 10px 15px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 10px;
   text-decoration: none;
-  color: inherit;
+  color: #e2e8f0;
 }
 
 .logo {
-  width: 64px;
-  height: 64px;
-  border-radius: 8px;
-  object-fit: cover;
-  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
 }
 
 .title h1 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 18px;
 }
 
-.title .slogan {
+.slogan {
   margin: 0;
-  font-size: 0.9rem;
-  color: var(--muted);
+  font-size: 14px;
+  color: #94a3b8;
 }
 
+/* ===== НАВИГАЦИЯ ===== */
 nav {
-  background: #1e293b;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1e293b;
 }
 
 .nav-list {
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 1rem;
   list-style: none;
-  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 10px;
   flex-wrap: wrap;
 }
 
 .nav-list a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: var(--text);
+  color: #e2e8f0;
   text-decoration: none;
-  font-size: 1rem;
+  padding: 6px 12px;
 }
 
-.nav-list a:hover {
-  color: var(--primary);
+.nav-list a:hover,
+.nav-list a.active {
+  color: #3b82f6;
 }
 
-#nav-toggle {
-  display: none;
-}
-
+/* ===== ОСНОВНО СЪДЪРЖАНИЕ ===== */
 main {
-  padding: 1.5rem;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
+  padding: 20px;
 }
 
 h2 {
-  color: var(--primary);
-  font-size: 2rem;
+  color: #3b82f6;
   margin-top: 0;
-  margin-bottom: 1rem;
-  font-weight: 700;
 }
 
-h3 {
-  color: var(--primary);
-  font-size: 1.3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
+p {
+  margin-bottom: 15px;
 }
 
-/* Съдържане секции */
-.types-content, .functions-content, .implementation-content {
-  background: #1e293b;
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1.5rem;
-}
-
-.types-content p, .functions-content p, .implementation-content p {
-  color: var(--text);
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-.types-content ul, .functions-content ul, .implementation-content ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 1rem 0;
-}
-
-.types-content li, .functions-content li, .implementation-content li {
-  padding-left: 1.75rem;
-  margin-bottom: 0.75rem;
-  position: relative;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.types-content li:before, .functions-content li:before, .implementation-content li:before {
-  content: "▪";
-  color: var(--primary);
-  position: absolute;
-  left: 0;
-  font-size: 1.2rem;
-}
-
-/* Изображения */
-.visual, .functions-visual {
-  margin: 1.5rem 0;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.visual img, .functions-visual img {
+/* ===== ИЗОБРАЖЕНИЯ ===== */
+img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  max-height: 350px;
-}
-
-/* Форма */
-.contact-section {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 1rem;
-  align-items: start;
-}
-
-.contact-section label {
   display: block;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+  border-radius: 6px;
 }
 
-.contact-section input[type="text"], .contact-section input[type="email"], .contact-section textarea {
+/* ===== СЕКЦИИ ===== */
+.section-box {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* ===== ФОРМА ===== */
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
   width: 100%;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #0f172a;
-  color: var(--text);
-  font-size: 0.95rem;
+  padding: 8px;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  border-radius: 5px;
 }
 
-.contact-section input:focus, .contact-section textarea:focus {
-  outline: 2px dashed var(--primary);
-  outline-offset: 2px;
-}
-
-.muted {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-#formMessage {
-  margin-top: 0.5rem;
-}
-
-#formMessage .error {
-  color: var(--error);
-  background: rgba(248, 113, 113, 0.1);
-  padding: 0.5rem;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
-}
-
-#formMessage .success {
-  color: var(--success);
-  background: rgba(74, 222, 128, 0.1);
-  padding: 0.5rem;
-  border-radius: 6px;
-}
-
-/* Бутони */
-.form-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-.btn-primary {
-  background: var(--primary);
+button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #3b82f6;
   color: #ffffff;
-  border: 0;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.btn-primary:hover {
-  background: #2563eb;
-}
-
-/* Контактна информация */
-.contact-info {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 6px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Таблица */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: transparent;
-  margin-top: 1rem;
-}
-
-th, td {
-  padding: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: left;
-}
-
-th {
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--primary);
-  font-weight: 600;
-}
-
-/* Галерия */
-.gallery {
-  margin-top: 1rem;
-}
-
-.gallery h2 {
-  margin-bottom: 2rem;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.gallery-item {
-  text-align: center;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
   border: none;
-  display: block;
-  margin-bottom: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.gallery-item p {
-  color: var(--muted);
-  margin: 0;
+button:hover {
+  background-color: #2563eb;
 }
 
+/* ===== FOOTER ===== */
 footer {
-  padding: 1rem;
+  background-color: #1e293b;
   text-align: center;
-  color: var(--muted);
-  margin-top: 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: #1e293b;
+  padding: 15px;
+  color: #94a3b8;
+  border-top: 1px solid #334155;
 }
 
-/* Таблети (до 1024px) */
-@media (max-width: 1024px) {
-  .contact-section {
-    grid-template-columns: 1fr;
-  }
-  .contact-info {
-    order: 2;
-  }
-}
-
-/* Мобилни (до 900px) */
-@media (max-width: 900px) {
-  main {
-    padding: 1rem;
-  }
-
-  .types-content, .functions-content, .implementation-content {
-    padding: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-
-  th, td {
-    padding: 0.5rem;
-  }
-}
-
-/* Малки екрани (до 480px) */
-@media (max-width: 480px) {
-  .logo {
-    width: 48px;
-    height: 48px;
-  }
-  .title h1 {
-    font-size: 1rem;
-  }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
   .topbar {
-    padding: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
   }
 
   main {
-    padding: 0.75rem;
-  }
-
-  .types-content, .functions-content, .implementation-content {
-    padding: 1rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
-
-  .visual, .functions-visual {
-    padding: 1rem;
-  }
-
-  .visual img, .functions-visual img {
-    max-height: 250px;
-  }
-
-  .contact-section label {
-    font-size: 0.95rem;
-  }
-
-  .contact-section input[type="text"], .contact-section input[type="email"], .contact-section textarea {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-
-  .btn-primary {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.8rem;
+    padding: 15px;
   }
 }

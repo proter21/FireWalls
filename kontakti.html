@@ -33,92 +33,80 @@
     </header>
 
     <main>
-      <!-- Основен раздел с форма за контакт и допълнителна контактна информация -->
-      <section
-        class="contact-section content"
-        aria-labelledby="contact-heading"
+      <h2 id="contact-heading">Свържете се с нас</h2>
+      <p>
+        Имате въпрос относно имплементация или конфигурация на защитна стена?
+        Попълнете формата по-долу и ние ще се свържем с Вас.
+      </p>
+
+      <form
+        id="contactForm"
+        action="#"
+        method="post"
+        novalidate
+        aria-describedby="form-desc"
       >
-        <h2 id="contact-heading">Свържете се с нас</h2>
-        <p>
-          Имате въпрос относно имплементация или конфигурация на защитна стена?
-          Попълнете формата по-долу и ние ще се свържем с Вас.
+        <p id="form-desc" class="muted">
+          Задължителните полета са отбелязани с *
         </p>
 
-        <!-- Форма: използваме novalidate, защото правим собствени проверки с JS (по-ясни съобщения) -->
-        <form
-          id="contactForm"
-          action="#"
-          method="post"
-          novalidate
-          aria-describedby="form-desc"
-        >
-          <p id="form-desc" class="muted">
-            Задължителните полета са отбелязани с *
-          </p>
+        <label for="name">Име *</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          minlength="2"
+          placeholder="Вашето име"
+          aria-required="true"
+        />
 
-          <label for="name">Име *</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            minlength="2"
-            placeholder="Вашето име"
-            aria-required="true"
-          />
+        <label for="email">Имейл *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="example@domain.bg"
+          aria-required="true"
+        />
 
-          <label for="email">Имейл *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="example@domain.bg"
-            aria-required="true"
-          />
+        <label for="subject">Относно</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Кратък текст."
+        />
 
-          <label for="subject">Относно</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="Кратко описание (напр. конфигуриране на NAT)"
-          />
+        <label for="message">Съобщение *</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          minlength="10"
+          placeholder="Опишете вашия въпрос или проблем"
+          aria-required="true"
+        ></textarea>
 
-          <label for="message">Съобщение *</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-            required
-            minlength="10"
-            placeholder="Опишете вашия въпрос или проблем"
-            aria-required="true"
-          ></textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Изпрати</button>
+          <button type="reset" class="btn-secondary">Изчисти</button>
+        </div>
+      </form>
 
-          <!-- ARIA-live контейнер за показване на съобщения (грешки/успех) -->
-          <div id="formMessage" role="status" aria-live="polite"></div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn-primary">Изпрати</button>
-            <button type="reset" class="btn-secondary">Изчисти</button>
-          </div>
-        </form>
-
-        <!-- Алтернативни контакти (в address tag) -->
-        <address class="contact-info">
-          <strong>Адрес:</strong> Варна, България<br />
-          <strong>Е-поща:</strong> info@firewall-site.bg<br />
-          <strong>Телефон:</strong> +359 88 000 0000
-        </address>
-      </section>
+      <address class="contact-info">
+        <strong>Адрес:</strong> Варна, България<br />
+        <strong>Е-поща:</strong> info@firewall-site.bg<br />
+        <strong>Телефон:</strong> +359 88 000 0000
+      </address>
     </main>
 
     <footer>
       <p>© 2025 Защитни стени — Образователен ресурс</p>
     </footer>
 
-    <!-- Основен JavaScript файл (валидира формата, контрол на менюто, активен линк и т.н.) -->
     <script src="js/script.js"></script>
   </body>
 </html>
